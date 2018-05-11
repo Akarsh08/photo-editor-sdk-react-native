@@ -249,6 +249,7 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
     if (self.rejecter != nil) {
         // self.rejecter(@"DID_CANCEL", @"User did cancel the editor", nil);
         // self.rejecter = nil;
+        self.resolver(@"USER_SKIP_EDITING");
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         });
@@ -259,6 +260,7 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
     if (self.rejecter != nil) {
         // self.rejecter(@"DID_FAIL_TO_GENERATE_PHOTO", @"Photo generation failed", nil);
         // self.rejecter = nil;
+        self.resolver(@"GENERATE_IMAGE_ERROR");
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         });
