@@ -247,8 +247,8 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
 
 -(void)photoEditViewControllerDidCancel:(PESDKPhotoEditViewController *)photoEditViewController {
     if (self.rejecter != nil) {
-        self.rejecter(@"DID_CANCEL", @"User did cancel the editor", nil);
-        self.rejecter = nil;
+        // self.rejecter(@"DID_CANCEL", @"User did cancel the editor", nil);
+        // self.rejecter = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         });
@@ -257,8 +257,8 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
 
 -(void)photoEditViewControllerDidFailToGeneratePhoto:(PESDKPhotoEditViewController *)photoEditViewController {
     if (self.rejecter != nil) {
-        self.rejecter(@"DID_FAIL_TO_GENERATE_PHOTO", @"Photo generation failed", nil);
-        self.rejecter = nil;
+        // self.rejecter(@"DID_FAIL_TO_GENERATE_PHOTO", @"Photo generation failed", nil);
+        // self.rejecter = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         });
