@@ -190,6 +190,55 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
             }
             
         }];
+
+        [builder configureTransformToolController:^(PESDKTransformToolControllerOptionsBuilder * _Nonnull options) {
+            options.allowFreeCrop = NO;
+            options.allowedCropRatios = @[
+                                        [[PESDKCropAspect alloc] initWithWidth:4 height:5 localizedName:@"4 : 5" rotatable:NO],
+                                        [[PESDKCropAspect alloc] initWithWidth:1 height:1 localizedName:@"1 : 1" rotatable:NO],
+                                        [[PESDKCropAspect alloc] initWithWidth:4 height:3 localizedName:@"4 : 3" rotatable:NO],
+                                        [[PESDKCropAspect alloc] initWithWidth:3 height:2 localizedName:@"3 : 2" rotatable:NO],
+                                        [[PESDKCropAspect alloc] initWithWidth:5 height:3 localizedName:@"5 : 3" rotatable:NO],
+                                        [[PESDKCropAspect alloc] initWithWidth:16 height:9 localizedName:@"16 : 9" rotatable:NO]
+                                    ];
+        }];
+
+        PESDKPhotoEffect.allEffects = @[
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"arabica12" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/arabica12" withExtension:@"png"] displayName:@"arabica12"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"ava614" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/ava614" withExtension:@"png"] displayName:@"ava614"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"azrael93" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/azrael93" withExtension:@"png"] displayName:@"azrael93"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"byers11" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/byers11" withExtension:@"png"] displayName:@"byers11"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"chemical168" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/chemical168" withExtension:@"png"] displayName:@"chemical168"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"clayton33" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/clayton33" withExtension:@"png"] displayName:@"clayton33"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"clouseau54" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/clouseau54" withExtension:@"png"] displayName:@"clouseau54"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"cobi3" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/cobi3" withExtension:@"png"] displayName:@"cobi3"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"contrail35" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/contrail35" withExtension:@"png"] displayName:@"contrail35"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"cubicle99" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/cubicle99" withExtension:@"png"] displayName:@"cubicle99"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"django25" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/django25" withExtension:@"png"] displayName:@"django25"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"domingo145" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/domingo145" withExtension:@"png"] displayName:@"domingo145"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"faded47" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/faded47" withExtension:@"png"] displayName:@"faded47"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"folger50" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/folger50" withExtension:@"png"] displayName:@"folger50"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"fusion88" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/fusion88" withExtension:@"png"] displayName:@"fusion88"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"hyla68" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/hyla68" withExtension:@"png"] displayName:@"hyla68"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"korben214" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/korben214" withExtension:@"png"] displayName:@"korben214"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"lenox340" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/lenox340" withExtension:@"png"] displayName:@"lenox340"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"lucky64" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/lucky64" withExtension:@"png"] displayName:@"lucky64"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"mc-kinnon75" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/mc-kinnon75" withExtension:@"png"] displayName:@"mc-kinnon75"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"milo5" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/milo5" withExtension:@"png"] displayName:@"milo5"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"neon770" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/neon770" withExtension:@"png"] displayName:@"neon770"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"paladin1875" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/paladin1875" withExtension:@"png"] displayName:@"paladin1875"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"pasadena21" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/pasadena21" withExtension:@"png"] displayName:@"pasadena21"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"pitaya15" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/pitaya15" withExtension:@"png"] displayName:@"pitaya15"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"reeve38" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/reeve38" withExtension:@"png"] displayName:@"reeve38"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"remy24" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/remy24" withExtension:@"png"] displayName:@"remy24"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"sprocket231" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/sprocket231" withExtension:@"png"] displayName:@"sprocket231"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"teigen28" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/teigen28" withExtension:@"png"] displayName:@"teigen28"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"trent18" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/trent18" withExtension:@"png"] displayName:@"trent18"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"tweed71" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/tweed71" withExtension:@"png"] displayName:@"tweed71"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"vireo37" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/vireo37" withExtension:@"png"] displayName:@"vireo37"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"zed32" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/zed32" withExtension:@"png"] displayName:@"zed32"],
+            [[PESDKPhotoEffect alloc] initWithIdentifier:@"zeke39" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/zeke39" withExtension:@"png"] displayName:@"zeke39"]
+        ];
         
         [builder configureCameraViewController:^(PESDKCameraViewControllerOptionsBuilder * b) {
             if ([options valueForKey:kBackgroundColorCameraKey]) {
