@@ -171,21 +171,21 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
         // To change the icons of outer UI
         if ([name isEqual:@"imgly_icon_save"]) {
             // toolbar --> save button icon
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/done_black_30" withExtension:@"png"];
+            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/done_black_44" withExtension:@"png"];
             NSData * data =[NSData dataWithContentsOfURL:url];
             UIImage * img = [UIImage imageWithData:data];
             return img;
         }
         if ([name isEqual:@"imgly_icon_approve_44pt"]) {
             // toolbar --> apply button icont
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/apply_black_30" withExtension:@"png"];
+            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/apply_black_25_44" withExtension:@"png"];
             NSData * data =[NSData dataWithContentsOfURL:url];
             UIImage * img = [UIImage imageWithData:data];
             return img;
         }
         if ([name isEqual:@"imgly_icon_cancel_44pt"]) {
             // toolbar --> discard button icon
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/discard_black_30" withExtension:@"png"];
+            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/discard_black_25_44" withExtension:@"png"];
             NSData * data =[NSData dataWithContentsOfURL:url];
             UIImage * img = [UIImage imageWithData:data];
             return img;
@@ -301,6 +301,7 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
             }];
             // setting filter effects to e shown on filter tool screen
             PESDKPhotoEffect.allEffects = @[
+                                            [[PESDKPhotoEffect alloc] initWithIdentifier:@"normal" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/normal" withExtension:@"png"] displayName:@"normal"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"arabica12" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/arabica12" withExtension:@"png"] displayName:@"arabica12"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"ava614" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/ava614" withExtension:@"png"] displayName:@"ava614"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"azrael93" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/azrael93" withExtension:@"png"] displayName:@"azrael93"],
