@@ -171,23 +171,17 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
         // To change the icons of outer UI
         if ([name isEqual:@"imgly_icon_save"]) {
             // toolbar --> save button icon
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/done_black_44" withExtension:@"png"];
-            NSData * data =[NSData dataWithContentsOfURL:url];
-            UIImage * img = [UIImage imageWithData:data];
+            UIImage * img = [UIImage imageNamed:@"doneButton"];
             return img;
         }
         if ([name isEqual:@"imgly_icon_approve_44pt"]) {
             // toolbar --> apply button icont
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/apply_black_25_44" withExtension:@"png"];
-            NSData * data =[NSData dataWithContentsOfURL:url];
-            UIImage * img = [UIImage imageWithData:data];
+            UIImage * img = [UIImage imageNamed:@"applyButton"];
             return img;
         }
         if ([name isEqual:@"imgly_icon_cancel_44pt"]) {
             // toolbar --> discard button icon
-            NSURL * url = [[NSBundle mainBundle] URLForResource:@"FilterIcons/discard_black_25_44" withExtension:@"png"];
-            NSData * data =[NSData dataWithContentsOfURL:url];
-            UIImage * img = [UIImage imageWithData:data];
+            UIImage * img = [UIImage imageNamed:@"discardButton"];
             return img;
         }
         if ([name isEqual:@"imgly_icon_flipHorizontal_48pt"]) {
