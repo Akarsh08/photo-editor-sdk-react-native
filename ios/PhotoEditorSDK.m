@@ -16,6 +16,7 @@ NSString* const kBackgroundColorMenuEditorKey = @"backgroundColorMenuEditor";
 NSString* const kBackgroundColorCameraKey = @"backgroundColorCamera";
 NSString* const kCameraRollAllowedKey = @"cameraRowAllowed";
 NSString* const kShowFiltersInCameraKey = @"showFiltersInCamera";
+NSString* selectedFilter = @"normal";
 
 // Menu items
 typedef enum {
@@ -292,6 +293,17 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
                     slider.filledTrackColor = [UIColor blackColor];
                     slider.unfilledTrackColor = [UIColor lightGrayColor];
                 };
+                // saving selected filter
+                options.filterSelectedClosure = ^(PESDKPhotoEffect * _Nonnull effect) {
+                    selectedFilter = effect.displayName;
+                };
+                
+                options.discardButtonConfigurationClosure = ^(PESDKButton * _Nonnull but) {
+                    but.actionClosure = ^(id _Nonnull lic) {
+                        selectedFilter = @"normal";
+                    };
+                    
+                };
             }];
             // setting filter effects to e shown on filter tool screen
             PESDKPhotoEffect.allEffects = @[
@@ -389,6 +401,7 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
         // self.rejecter(@"DID_CANCEL", @"User did cancel the editor", nil);
         // self.rejecter = nil;
         self.resolver(@"USER_SKIP_EDITING");
+        selectedFilter = @"normal";
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         });
@@ -416,7 +429,8 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
                       [randomPath stringByAppendingString:@".jpg"] ];
     
     [data writeToFile:path atomically:YES];
-    self.resolver(path);
+    NSString* response = [NSString stringWithFormat:@"{\"path\":\"%@\", \"filter\":\"%@\"}",path, selectedFilter];
+    self.resolver(response);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.editController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
     });
