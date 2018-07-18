@@ -334,7 +334,6 @@ static NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"M5" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/M5" withExtension:@"png"] displayName:@"Blanche"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"M6" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/M6" withExtension:@"png"] displayName:@"Brille"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"P5" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/P5" withExtension:@"png"] displayName:@"Atlantis"],
-                                            [[PESDKPhotoEffect alloc] initWithIdentifier:@"sprocket231" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/sprocket231" withExtension:@"png"] displayName:@"sprocket231"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"T1" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/T1" withExtension:@"png"] displayName:@"Pastel"],
                                             [[PESDKPhotoEffect alloc] initWithIdentifier:@"X1" lutURL:[[NSBundle mainBundle] URLForResource:@"ImageFilters/X1" withExtension:@"png"] displayName:@"Rétro"],
             ];
