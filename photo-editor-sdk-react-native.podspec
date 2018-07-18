@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'AVHexColor'
   s.dependency 'React'
-  s.dependency 'PhotoEditorSDK', '= 8.3.8'
+  s.dependency 'PhotoEditorSDK', '~> 8.3.8'
 end
