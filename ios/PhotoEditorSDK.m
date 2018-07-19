@@ -427,7 +427,7 @@ RCT_EXPORT_METHOD(openCamera: (NSArray*) features options:(NSDictionary*) option
     NSString* path = [documentsDirectory stringByAppendingPathComponent:
                       [randomPath stringByAppendingString:@".jpg"] ];
     
-    [data writeToFile:path atomically:YES];
+    [UIImageJPEGRepresentation(image, 1) writeToFile:path atomically:YES];
     NSString* response = [NSString stringWithFormat:@"{\"path\":\"%@\", \"filter\":\"%@\"}",path, selectedFilter];
     self.resolver(response);
     dispatch_async(dispatch_get_main_queue(), ^{
